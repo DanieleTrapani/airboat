@@ -1,8 +1,25 @@
-<h3>Book a Boat.</h3>
-  <%= form_with model: [@boat, @booking] do |f| %>
-    <%= f.text_field :pickup_date, placeholder: 'Pick-up date' %>
-    <%= f.text_field :return_date, placeholder: 'Return data' %>
-    <%= f.text_field :num_people, placeholder: 'Number of people'%>
-  <% end %>
-  <button class="btn btn-primary">Submit</button>
-</div>
+<%= form_with model: [@boat, @booking] do |f| %>
+  <%= @booking.user.email %>
+  <div class="row gx-4 my-2">
+    <div class="col">
+      <%= f.text_field :pickup_date, class: 'form-control bg-white', placeholder: 'Pick-up date', data: { controller: "datepicker" } %>
+    </div>
+    <div class="col">
+      <%= f.text_field :return_date, class: 'form-control bg-white',placeholder: 'Return date', data: { controller: "datepicker" } %>
+    </div>
+  </div>
+  <div class="row gx-4 my-2">
+    <div class="col">
+      <%= f.text_field :num_people, class: 'form-control bg-white',placeholder: 'Number of people'%>
+    </div>
+    <div class="col">
+      <%= f.text_field :phone_num, class: 'form-control bg-white',placeholder: 'Phone number'%>
+    </div>
+  </div>
+  <div class="row gx-4 my-2">
+    <div class="col">
+      <%= f.text_field :billing_address, class: 'form-control bg-white',placeholder: 'Billing address'%>
+    </div>
+  </div>
+  <%= f.submit class:"btn btn-primary"%>
+<% end %>
