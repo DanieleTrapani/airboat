@@ -1,0 +1,9 @@
+<div>
+  <h3><%= @full_name %></h3>
+  <p>Email: <%= current_user.email %></p>
+  <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary" %>
+</div>
+<div>
+  <h3>My Boats</h3>
+  <%= render partial: 'shared/boat', collection: @boats %>
+</div>
