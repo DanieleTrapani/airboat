@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :boats, except: %i[index] do
     resources :bookings, only: %i[new create]
   end
+
+  get 'dashboard', to: 'pages#dashboard'
 end
