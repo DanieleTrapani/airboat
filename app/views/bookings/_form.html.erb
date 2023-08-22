@@ -1,0 +1,8 @@
+<h3>Book a Boat.</h3>
+  <%= form_with model: [@boat, @booking] do |f| %>
+    <%= f.text_field :pickup_date, placeholder: 'Pick-up date' %>
+    <%= f.text_field :return_date, placeholder: 'Return data' %>
+    <%= f.text_field :num_people, placeholder: 'Number of people'%>
+  <% end %>
+  <button class="btn btn-primary">Submit</button>
+</div>
