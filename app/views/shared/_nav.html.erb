@@ -10,6 +10,11 @@
       </button>
       <ul class="dropdown-menu dropdown-menu-end">
         <li><a class="dropdown-item" href="/dashboard">Profile</a></li>
+        <li>
+          <%= link_to "Sign Out", destroy_user_session_path,
+          data: { "turbo-method": :delete },
+          class: "dropdown-item" %>
+        </li>
       </ul>
     </div>
   <% else %>
