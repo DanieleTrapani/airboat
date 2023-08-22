@@ -1,9 +1,15 @@
-<div>
+<div class="mb-4">
   <h3><%= @full_name %></h3>
   <p>Email: <%= current_user.email %></p>
   <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary" %>
 </div>
-<div>
+<hr>
+<div class="my-3">
   <h3>My Boats</h3>
-  <%= render partial: 'shared/boat', collection: @boats %>
+  <% if current_user.boats.empty? %>
+    <p>You have no boats yet..</p>
+  <% else %>
+    <%= render partial: 'shared/boat', collection: @boats %>
+  <% end %>
+  <%= link_to "Add Boat", new_boat_path, class: "btn btn-primary" %>
 </div>
