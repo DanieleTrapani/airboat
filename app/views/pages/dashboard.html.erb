@@ -9,7 +9,9 @@
   <% if current_user.boats.empty? %>
     <p>You have no boats yet..</p>
   <% else %>
-    <%= render partial: 'shared/boat', collection: @boats %>
+    <div class="row row-cols-1 row-cols-md-4 g-4 mb-3">
+      <%= render partial: 'shared/boat', collection: @boats %>
+    </div>
   <% end %>
   <%= link_to "Add Boat", new_boat_path, class: "btn btn-primary" %>
 </div>
