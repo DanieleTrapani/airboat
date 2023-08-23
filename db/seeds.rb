@@ -6,10 +6,13 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+puts "Cleaning DB..."
 User.destroy_all
 Boat.destroy_all
 Booking.destroy_all
+puts "DB Clean"
 
+puts "Populating DB..."
 10.times do
   # User generation
   first_name = Faker::Name.first_name
@@ -32,3 +35,4 @@ Booking.destroy_all
 
   Boat.create!(name: name, brand: brand, engine: engine, year: year, capacity: capacity, cost: cost, pickup_address: address, user_id: user_id, img_url: img )
 end
+puts "Done!"
