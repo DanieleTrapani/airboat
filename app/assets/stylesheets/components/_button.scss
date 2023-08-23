@@ -1,0 +1,13 @@
+// .btn-blue {
+//   color: rgb(39, 147, 153);
+// }
+
+.btn-primary {
+  border-radius: 10px;
+  color: aliceblue;
+  background: rgb(2, 43, 46);
+
+  &:hover{
+    background: rgb(33, 143, 198);
+  }
+}
