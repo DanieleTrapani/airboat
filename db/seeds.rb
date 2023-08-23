@@ -7,6 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 User.destroy_all
+Boat.destroy_all
+Booking.destroy_all
 
 10.times do
   # User generation
@@ -22,9 +24,11 @@ User.destroy_all
   brand = Faker::Company.name
   engine = Faker::Vehicle.version
   year = Faker::Vehicle.year
-  capacity = Faker::Vehicle.engine
+  capacity = rand(1..5)
   cost = rand(80..190)
   address = Faker::Address.street_address
   user_id = user.id
-  Boat.create(name: name, brand: brand, engine: engine, year: year, capacity: capacity, cost: cost, pickup_address: address, user_id: user_id )
+  img = Faker::LoremFlickr.image(search_terms: ['boat'])
+
+  Boat.create!(name: name, brand: brand, engine: engine, year: year, capacity: capacity, cost: cost, pickup_address: address, user_id: user_id, img_url: img )
 end
