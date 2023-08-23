@@ -1,6 +1,6 @@
 <div class="col">
-  <div class="row">
-    <div class="card" style="width: 18rem; height: 30rem">
+  <%=  link_to boat, class:"text-decoration-none" do %>
+    <div class="card h-100" style="width: 306px;">
       <img src="https://images.unsplash.com/photo-1593351415075-3bac9f45c877?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" class="card-img-top" alt="..." width="400" height="300">
       <div class="card-body">
         <h5 class="card-title"><%= boat.name %>
@@ -21,9 +21,8 @@
           <h5>
             €<%= boat.cost %>
           </h5>
-          <a href="#" class="btn btn-primary">Book me</a>
         </div>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>
