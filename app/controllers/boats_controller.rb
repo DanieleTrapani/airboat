@@ -18,7 +18,6 @@ class BoatsController < ApplicationController
     @boat.user_id = current_user.id
     if @boat.save
       redirect_to boat_path(@boat)
-      raise
     else
       render :new, status: :unprocessable_entity
     end

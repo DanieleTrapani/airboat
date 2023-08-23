@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[new create]
   end
 
+  get 'confirmation', to: 'bookings#confirm'
   get 'dashboard', to: 'pages#dashboard'
 end

@@ -11,11 +11,11 @@
           </svg>
           )
         </h5>
-        <p class="card-text"><%= boat.pickup_address %></p>
+        <p class="card-text"><strong>Pickup address</strong>: <%= boat.pickup_address %></p>
         <ul>
-          <li><%= boat.brand %></li>
-          <li><%= boat.engine %></li>
-          <li><%= boat.year %></li>
+          <li><strong>Brand</strong>: <%= boat.brand %></li>
+          <li><strong>Engine</strong>: <%= boat.engine %></li>
+          <li><strong>Year</strong>: <%= boat.year %></li>
         </ul>
         <div class="d-flex p-2 justify-content-between">
           <h5>
@@ -26,9 +26,3 @@
     </div>
   <% end %>
 </div>
-<%# <%= boat.name %>
-<%#
-      t.integer :cost
-      t.references :user, null: false, foreign_key: true
-
-      t.timestamps %>
