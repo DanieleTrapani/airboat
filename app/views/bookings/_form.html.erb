@@ -2,24 +2,17 @@
   <%= @booking.user.email %>
   <div class="row gx-4 my-2">
     <div class="col">
-      <%= f.text_field :pickup_date, class: 'form-control bg-white', placeholder: 'Pick-up date', data: { controller: "datepicker" } %>
+      <%= f.date_field :start_date, class: 'form-control bg-white', placeholder: 'Pick-up date', data: { controller: "datepicker" } %>
     </div>
     <div class="col">
-      <%= f.text_field :return_date, class: 'form-control bg-white',placeholder: 'Return date', data: { controller: "datepicker" } %>
+      <%= f.date_field :end_date, class: 'form-control bg-white',placeholder: 'Return date', data: { controller: "datepicker" } %>
     </div>
   </div>
   <div class="row gx-4 my-2">
     <div class="col">
-      <%= f.text_field :num_people, class: 'form-control bg-white',placeholder: 'Number of people'%>
-    </div>
-    <div class="col">
-      <%= f.text_field :phone_num, class: 'form-control bg-white',placeholder: 'Phone number'%>
+      <%= f.text_field :capacity, class: 'form-control bg-white',placeholder: 'Number of people'%>
     </div>
   </div>
-  <div class="row gx-4 my-2">
-    <div class="col">
-      <%= f.text_field :billing_address, class: 'form-control bg-white',placeholder: 'Billing address'%>
-    </div>
-  </div>
+
   <%= f.submit class:"btn btn-primary"%>
 <% end %>
