@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
     booking.boat = @boat
     booking.user = current_user
     booking.save
+    redirect_to confirmation_path
   end
 
   def edit
@@ -24,6 +25,9 @@ class BookingsController < ApplicationController
   def destroy
     id = params[:id]
     Booking.destroy(id)
+  end
+
+  def confirm
   end
 
   private

@@ -16,9 +16,10 @@ class BoatsController < ApplicationController
   def create
     @boat = Boat.new(boat_params)
     @boat.user_id = current_user.id
+    # TODO: Temporary solution to avoid breaking
+    @boat.img_url = "https://loremflickr.com/320/240/yacht?#{@boat.name}"
     if @boat.save
       redirect_to boat_path(@boat)
-      raise
     else
       render :new, status: :unprocessable_entity
     end

@@ -6,8 +6,13 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+puts "Cleaning DB..."
 User.destroy_all
+Boat.destroy_all
+Booking.destroy_all
+puts "DB Clean"
 
+puts "Populating DB..."
 10.times do
   # User generation
   first_name = Faker::Name.first_name
@@ -22,9 +27,12 @@ User.destroy_all
   brand = Faker::Company.name
   engine = Faker::Vehicle.version
   year = Faker::Vehicle.year
-  capacity = Faker::Vehicle.engine
+  capacity = rand(1..5)
   cost = rand(80..190)
   address = Faker::Address.street_address
   user_id = user.id
-  Boat.create(name: name, brand: brand, engine: engine, year: year, capacity: capacity, cost: cost, pickup_address: address, user_id: user_id )
+  img = "https://loremflickr.com/320/240/yacht?#{name}"
+
+  Boat.create!(name: name, brand: brand, engine: engine, year: year, capacity: capacity, cost: cost, pickup_address: address, user_id: user_id, img_url: img )
 end
+puts "Done!"

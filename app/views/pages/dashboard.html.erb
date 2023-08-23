@@ -1,6 +1,6 @@
-<div class="mb-4">
+<div class="my-4">
   <h3><%= @full_name %></h3>
-  <p>Email: <%= current_user.email %></p>
+  <p><strong>Email</strong>: <%= current_user.email %></p>
   <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary" %>
 </div>
 <hr>
@@ -9,7 +9,19 @@
   <% if current_user.boats.empty? %>
     <p>You have no boats yet..</p>
   <% else %>
-    <%= render partial: 'shared/boat', collection: @boats %>
+    <div class="row row-cols-1 row-cols-md-4 g-4 mb-3">
+      <%= render partial: 'shared/boat', collection: @boats %>
+    </div>
   <% end %>
   <%= link_to "Add Boat", new_boat_path, class: "btn btn-primary" %>
+</div>
+<div class="my-3">
+  <h3>My Bookings</h3>
+  <% if current_user.bookings.empty? %>
+    <p>You have no bookings yet..</p>
+  <% else %>
+    <div class="row row-cols-1 row-cols-md-4 g-4 mb-3">
+      <%= render partial: 'shared/booking', collection: @bookings %>
+    </div>
+  <% end %>
 </div>

@@ -1,33 +1,28 @@
 <div class="col">
-  <div class="card" style="width: 18rem; height: ">
-    <img src="https://images.unsplash.com/photo-1593351415075-3bac9f45c877?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" class="card-img-top" alt="..." width="400" height="300">
-    <div class="card-body">
-      <h5 class="card-title"><%= boat.name %>
-        (
-        <%= boat.capacity %>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-          <path d="M4.243 4.757a3.757 3.757 0 1 1 5.851 3.119 6.006 6.006 0 0 1 3.9 5.339.75.75 0 0 1-.715.784H2.721a.75.75 0 0 1-.714-.784 6.006 6.006 0 0 1 3.9-5.34 3.753 3.753 0 0 1-1.664-3.118Z"></path>
-        </svg>
-        )
-      </h5>
-      <p class="card-text"><%= boat.pickup_address %></p>
-      <ul>
-        <li><%= boat.brand %></li>
-        <li><%= boat.engine %></li>
-        <li><%= boat.year %></li>
-      </ul>
-      <div class="d-flex p-2 justify-content-between">
-        <h5>
-          €<%= boat.cost %>
+  <%=  link_to boat, class:"text-decoration-none" do %>
+    <div class="card h-100" style="width: 306px;">
+      <%= image_tag(boat.img_url) %>
+      <div class="card-body">
+        <h5 class="card-title"><%= boat.name %>
+          (
+          <%= boat.capacity %>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+            <path d="M4.243 4.757a3.757 3.757 0 1 1 5.851 3.119 6.006 6.006 0 0 1 3.9 5.339.75.75 0 0 1-.715.784H2.721a.75.75 0 0 1-.714-.784 6.006 6.006 0 0 1 3.9-5.34 3.753 3.753 0 0 1-1.664-3.118Z"></path>
+          </svg>
+          )
         </h5>
-        <a href="#" class="btn btn-primary">Book me</a>
+        <p class="card-text"><strong>Pickup address</strong>: <%= boat.pickup_address %></p>
+        <ul>
+          <li><strong>Brand</strong>: <%= boat.brand %></li>
+          <li><strong>Engine</strong>: <%= boat.engine %></li>
+          <li><strong>Year</strong>: <%= boat.year %></li>
+        </ul>
+        <div class="d-flex p-2 justify-content-between">
+          <h5>
+            €<%= boat.cost %>
+          </h5>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>
-<%# <%= boat.name %>
-<%#
-      t.integer :cost
-      t.references :user, null: false, foreign_key: true
-
-      t.timestamps %>
