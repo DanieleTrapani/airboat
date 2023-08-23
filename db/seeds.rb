@@ -31,7 +31,8 @@ puts "Populating DB..."
   cost = rand(80..190)
   address = Faker::Address.street_address
   user_id = user.id
-  img = Faker::LoremFlickr.image(search_terms: ['boat'])
+  img = "https://loremflickr.com/320/240/yacht?#{name}"
+
   Boat.create!(name: name, brand: brand, engine: engine, year: year, capacity: capacity, cost: cost, pickup_address: address, user_id: user_id, img_url: img )
 end
 puts "Done!"
