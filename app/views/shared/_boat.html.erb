@@ -1,8 +1,8 @@
 <div class="col">
   <%=  link_to boat, class:"text-decoration-none" do %>
-    <div class="card h-100" style="width: 306px;">
+    <div class="card h-100">
       <%= image_tag(boat.img_url) %>
-      <div class="card-body">
+      <div class="card-body d-flex flex-column justify-content-between">
         <h5 class="card-title"><%= boat.name %>
           (
           <%= boat.capacity %>
@@ -12,15 +12,13 @@
           )
         </h5>
         <p class="card-text"><strong>Pickup address</strong>: <%= boat.pickup_address %></p>
-        <ul>
-          <li><strong>Brand</strong>: <%= boat.brand %></li>
-          <li><strong>Engine</strong>: <%= boat.engine %></li>
-          <li><strong>Year</strong>: <%= boat.year %></li>
-        </ul>
         <div class="d-flex p-2 justify-content-between">
           <h5>
             €<%= boat.cost %>
           </h5>
+          <% if boat.user.id == current_user.id %>
+            <%= button_to "Edit Boat", edit_boat_path(boat), class: 'btn btn-primary' %>
+          <% end %>
         </div>
       </div>
     </div>
