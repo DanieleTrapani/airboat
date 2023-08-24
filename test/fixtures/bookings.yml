@@ -1,0 +1,17 @@
+one:
+  user: callum
+  boat: one
+  start_date: '2023-09-01'
+  end_date: '2023-09-05'
+
+two:
+  user: callum
+  boat: one
+  start_date: '2023-09-10'
+  end_date: '2023-09-20'
+
+three:
+  user: callum
+  boat: one
+  start_date: '2023-09-25'
+  end_date: '2023-09-30'

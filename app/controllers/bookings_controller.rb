@@ -9,11 +9,10 @@ class BookingsController < ApplicationController
     booking = Booking.new(booking_params)
     booking.boat = @boat
     booking.user = current_user
-    if booking.validate?
-      booking.save
+    if booking.save
       redirect_to confirmation_path
     else
-      redirect_to new_boat_booking_path, alert: "End date must be after the start date."
+      render :new, status: :unprocessable_entity
     end
   end
 

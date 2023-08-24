@@ -1,0 +1,5 @@
+callum:
+  email: callum@jobbins.net
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'letmein!') %>
+  first_name: Callum
+  last_name: Jobbins
