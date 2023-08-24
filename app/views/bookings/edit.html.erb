@@ -1,0 +1,25 @@
+<div class="container">
+
+  <h2>Manage your booking for <%= @booking.boat.name %></h2>
+    <p>Your renter will be <%= @booking.boat.user.first_name %></p> <br>
+
+    <%= link_to "Cancel your booking", booking_path(@booking), data: { turbo_method: :delete }, class:"btn btn-primary"%>
+    <%# Placeholder img %>
+    <img src="https://images.unsplash.com/photo-1593351415075-3bac9f45c877?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" class="img-thumbnail mx-auto d-block" alt="..." width=300 height=300>
+
+    <%# Checkout %>
+
+    <div class="checkout border border-secondary rounded p-3 m-3">
+      <%= @booking.boat.cost %> € per day (all fees included) <br>
+
+
+       <%= render "edit_form" %>
+      <%# Use Stimulus to obtain date values on change %>
+
+
+      <%# Display total cost %>
+      Total <br>
+
+      <%=  %><br>
+    </div>
+</div>
