@@ -22,7 +22,7 @@
         </h5>
         <% if current_user.id == @boat.user_id %>
           <%= link_to "Edit", edit_boat_path(@boat), class: "btn btn-primary mt-4 p-2" %>
-          <%= button_to "Delete", boat_path(@boat), method: :delete, class: "btn btn-primary mt-4 p-2" %>
+          <%= link_to "Delete", boat_path(@boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-primary mt-4 p-2" %>
         <% else %>
           <%= link_to "Book Here", new_boat_booking_path(@boat), class: "btn btn-primary mt-4 p-2" %>
         <% end %>
