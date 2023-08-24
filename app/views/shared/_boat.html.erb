@@ -16,9 +16,6 @@
           <h5>
             €<%= boat.cost %>
           </h5>
-          <% if boat.user.id == current_user.id %>
-            <%= button_to "Edit Boat", edit_boat_path(boat), class: 'btn btn-primary' %>
-          <% end %>
         </div>
       </div>
     </div>
