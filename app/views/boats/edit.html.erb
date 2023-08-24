@@ -1,4 +1,5 @@
-<h2>Edit your new boat here</h2>
+<h1>Welcome, <%= current_user.first_name%> <%= current_user.last_name%></h1>
+<h2>Add your new boat here</h2>
 <%= simple_form_for(@boat) do |f| %>
   <%= f.input :name %>
   <%= f.input :brand %>

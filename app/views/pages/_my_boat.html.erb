@@ -1,0 +1,34 @@
+<div class="col">
+  <div class="card h-100" style="width: 306px;">
+    <%= image_tag(boat.img_url, width: 320, height:240) %>
+    <div class="card-body">
+      <h5 class="card-title"><%= boat.name %>
+        (
+        <%= boat.capacity %>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+          <path d="M4.243 4.757a3.757 3.757 0 1 1 5.851 3.119 6.006 6.006 0 0 1 3.9 5.339.75.75 0 0 1-.715.784H2.721a.75.75 0 0 1-.714-.784 6.006 6.006 0 0 1 3.9-5.34 3.753 3.753 0 0 1-1.664-3.118Z"></path>
+        </svg>
+        )
+      </h5>
+      <p class="card-text"><strong>Pickup address</strong>: <%= boat.pickup_address %></p>
+      <ul>
+        <li><strong>Brand</strong>: <%= boat.brand %></li>
+        <li><strong>Engine</strong>: <%= boat.engine %></li>
+        <li><strong>Year</strong>: <%= boat.year %></li>
+      </ul>
+      <div class="d-flex p-2 justify-content-between">
+        <h5>
+          €<%= boat.cost %>
+        </h5>
+        <% if current_user.id == boat.user_id %>
+          <div>
+            <%= link_to "Edit", edit_boat_path(boat), class: "btn btn-primary mt-4 p-2" %>
+            <%= link_to "Delete", boat_path(boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-primary mt-4 p-2" %>
+          </div>
+        <% else %>
+          <%= link_to "Book Here", new_boat_booking_path(boat), class: "btn btn-primary mt-4 p-2" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
