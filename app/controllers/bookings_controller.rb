@@ -20,11 +20,13 @@ class BookingsController < ApplicationController
   def update
     booking = Booking.find(params[:id])
     booking.update(booking_params)
+    redirect_to confirmation_path
   end
 
   def destroy
     id = params[:id]
     Booking.destroy(id)
+    redirect_to dashboard_path
   end
 
   def confirm
@@ -33,6 +35,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :id)
   end
 end
