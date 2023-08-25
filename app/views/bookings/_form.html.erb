@@ -1,5 +1,4 @@
 <%= form_with model: [@boat, @booking] do |f| %>
-  <%= @booking.user.email %>
   <div class="row gx-4 my-2">
     <div class="col">
       <%= f.date_field :start_date, class: 'form-control bg-white', placeholder: 'Pick-up date', data: { controller: "datepicker" } %>

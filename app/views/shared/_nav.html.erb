@@ -11,7 +11,11 @@
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;"><g fill="none"><path d="M2 16h28M2 24h28M2 8h28"></path></g></svg>
         </div>
         <div>
-          <img class="avatar" alt="avatar" src="https://a0.muscache.com/im/pictures/user/05a91131-6e9b-49e7-87e6-0b0022783e32.jpg?im_w=240">
+        <% if current_user.avatar_url.present? %>
+          <img class="avatar" alt="avatar" src=<%= current_user.avatar_url %>>
+        <% else %>
+          <img class="avatar" alt="avatar" src="https://static.vecteezy.com/system/resources/previews/010/054/157/original/chat-bot-robot-avatar-in-circle-round-shape-isolated-on-white-background-stock-illustration-ai-technology-futuristic-helper-communication-conversation-concept-in-flat-style-vector.jpg">
+        <% end %>
         </div>
       </button>
       <ul class="dropdown-menu dropdown-menu-end">

@@ -81,3 +81,5 @@ gem 'devise'
 
 # Faker for seeding
 gem 'faker'
+
+gem "cloudinary"
