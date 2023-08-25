@@ -1,5 +1,12 @@
-callum:
-  email: callum@jobbins.net
+renter:
+  email: renter@example.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'letmein!') %>
-  first_name: Callum
-  last_name: Jobbins
+  first_name: <%= Faker::Name.first_name %>
+  last_name: <%= Faker::Name.last_name %>
+
+
+owner:
+  email: owner@example.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'letmein!') %>
+  first_name: <%= Faker::Name.first_name %>
+  last_name: <%= Faker::Name.last_name %>
