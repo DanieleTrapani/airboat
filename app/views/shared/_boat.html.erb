@@ -1,6 +1,6 @@
 <div class="col">
   <%= link_to boat, class:"text-decoration-none" do %>
-    <div class="card h-100" style="width: 1fr">
+    <div class="card h-100 d-flex flex-col justify-content-between" style="width: 1fr">
       <%= image_tag(boat.img_url, height: 300, class: "card-img-top", style: "object-fit: cover")%>
       <div class="card-body">
         <h5 class="card-title"><%= boat.name %>
@@ -12,11 +12,11 @@
           )
         </h5>
         <p class="card-text"><strong>Pickup address</strong>: <%= boat.pickup_address %></p>
-        <div class="d-flex p-2 justify-content-between">
-          <h5>
-            €<%= boat.cost %>
-          </h5>
-        </div>
+      </div>
+      <div class="d-flex p-2 justify-content-between">
+        <h5>
+          €<%= boat.cost %>
+        </h5>
       </div>
     </div>
   <% end %>
