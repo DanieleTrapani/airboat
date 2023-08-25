@@ -21,8 +21,8 @@ IMG = [
 
 puts "Cleaning DB..."
 User.destroy_all
-Boat.destroy_all
 Booking.destroy_all
+Boat.destroy_all
 puts "DB Clean"
 
 puts "Populating DB..."

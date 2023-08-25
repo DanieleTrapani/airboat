@@ -11,3 +11,14 @@
     background: rgb(33, 143, 198);
   }
 }
+
+.btn-dark {
+  gap: 10px;
+  margin:0;
+  border-radius: 21px;
+  height: 42px;
+  &:hover{
+    background: transparent;
+  }
+  align-items:center
+}
