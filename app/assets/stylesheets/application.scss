@@ -10,3 +10,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.field_with_errors > .form-control {
+  border-color: $danger-border-subtle !important;
+}
