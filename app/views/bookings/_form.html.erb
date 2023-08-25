@@ -1,4 +1,14 @@
 <%= form_with model: [@boat, @booking] do |f| %>
+  <% if @booking.errors.any? %>
+    <div class="bg-danger-emphasis p-4 rounded-4">
+      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+      <ul>
+        <% @booking.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <%= @booking.user.email %>
   <div class="row gx-4 my-2">
     <div class="col">
@@ -13,6 +23,5 @@
       <%= f.text_field :capacity, class: 'form-control bg-white',placeholder: 'Number of people'%>
     </div>
   </div>
-
   <%= f.submit class:"btn btn-primary"%>
 <% end %>

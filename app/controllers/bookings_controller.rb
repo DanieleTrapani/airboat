@@ -6,10 +6,10 @@ class BookingsController < ApplicationController
 
   def create
     @boat = Boat.find(params[:boat_id])
-    booking = Booking.new(booking_params)
-    booking.boat = @boat
-    booking.user = current_user
-    if booking.save
+    @booking = Booking.new(booking_params)
+    @booking.boat = @boat
+    @booking.user = current_user
+    if @booking.save
       redirect_to confirmation_path
     else
       render :new, status: :unprocessable_entity
