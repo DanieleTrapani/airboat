@@ -4,6 +4,7 @@ class Booking < ApplicationRecord
 
   validates :start_date, presence: true
   validates :end_date, presence: true
+  validates :start_date, comparison: { less_than: :end_date }
   validates :passengers, presence: true, numericality: { only_integer: true }
   validate :boat_available
 
