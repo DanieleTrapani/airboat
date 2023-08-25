@@ -3,6 +3,9 @@
     <div class="card h-100" style="width: 306px;">
       <%= image_tag(booking.boat.img_url, height: 300, class: "card-img-top", style: "object-fit: cover")%>
       <div class="card-body">
+        <p class="card-text"><strong>Booked dates</strong>: <br>
+          From: <%= booking.start_date %> to <%= booking.end_date %> </p>
+        <p class="card-text"><strong>Guests</strong>: <%= booking.guests %></p>
         <h5 class="card-title"><%= booking.boat.name %>
           (
           <%= booking.boat.capacity %>
@@ -11,8 +14,6 @@
           </svg>
           )
         </h5>
-        <p class="card-text"><strong>Booked dates</strong>: <br>
-          From: <%= booking.start_date %> to <%= booking.end_date %> </p>
         <ul>
           <li><strong>Brand</strong>: <%= booking.boat.brand %></li>
           <li><strong>Engine</strong>: <%= booking.boat.engine %></li>

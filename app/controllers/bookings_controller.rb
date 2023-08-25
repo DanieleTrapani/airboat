@@ -23,8 +23,8 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     if params[:booking][:end_date] > params[:booking][:start_date]
-      @booking.update(booking_params)
-      redirect_to confirmation_path
+      booking.update(booking_params)
+      redirect_to dashboard_path
     else
       render :edit, status: :unprocessable_entity
     end
@@ -43,5 +43,9 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :passengers)
+  end
+
+  def validate?
+    booking.end_date > booking.start_date
   end
 end
