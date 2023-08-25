@@ -25,7 +25,7 @@ class BookingsController < ApplicationController
     booking = Booking.find(params[:id])
     if params[:booking][:end_date] > params[:booking][:start_date]
       booking.update(booking_params)
-      redirect_to confirmation_path
+      redirect_to dashboard_path
     else
       redirect_to edit_booking_path, alert: "End date must be after the start date."
     end
@@ -43,7 +43,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :id)
+    params.require(:booking).permit(:start_date, :end_date, :guests, :id)
   end
 
   def validate?
