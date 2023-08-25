@@ -5,7 +5,10 @@
 </div>
 <hr>
 <div class="my-3">
-  <h3>My Boats</h3>
+  <div class="d-flex mb-3">
+    <h3 class="mx-2">My Boats</h3>
+    <%= link_to "Add Boat", new_boat_path, class: "btn btn-primary" %>
+  </div>
   <% if current_user.boats.empty? %>
     <p>You have no boats yet..</p>
   <% else %>
@@ -15,7 +18,6 @@
       <% end %>
     </div>
   <% end %>
-  <%= link_to "Add Boat", new_boat_path, class: "btn btn-primary" %>
 </div>
 <div class="my-3">
   <h3>My Bookings</h3>
