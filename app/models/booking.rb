@@ -4,9 +4,9 @@ class Booking < ApplicationRecord
 
   validates :start_date, presence: true
   validates :end_date, presence: true
-  validates :start_date, comparison: { less_than: :end_date }
+  validates :end_date, comparison: { greater_than: :start_date, message: "must be after the start date." }
   validates :passengers, presence: true, numericality: { only_integer: true }
-  validate :boat_available
+  validate :boat_available, if: -> { start_date.present? || end_date.present? }
 
   def boat_available
     errors.add(:start_date, "not available") if boat.bookings.where(start_date: (start_date..end_date)).exists?
