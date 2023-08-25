@@ -64,8 +64,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_25_134426) do
     t.bigint "boat_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "passengers"
     t.integer "guests"
+    t.integer "passengers"
     t.index ["boat_id"], name: "index_bookings_on_boat_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
