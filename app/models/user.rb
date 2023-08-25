@@ -8,4 +8,6 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   has_many :boats, dependent: :destroy
   has_many :bookings, dependent: :destroy
+
+  has_one_attached :avatar
 end
