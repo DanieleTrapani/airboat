@@ -1,4 +1,15 @@
 <%= form_with model: [@boat, @booking] do |f| %>
+  <% if @booking.errors.any? %>
+    <div class="text-danger bg-white border border-danger-subtle m-4 p-4 rounded-4">
+      <h3>We have been unable to complete the booking for <%= @boat.name %> because:</h3>
+      <ul>
+        <% @booking.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="row gx-4 my-2">
     <div class="col">
       <%= f.date_field :start_date, class: 'form-control bg-white', placeholder: 'Pick-up date', data: { controller: "datepicker" } %>
@@ -9,9 +20,8 @@
   </div>
   <div class="row gx-4 my-2">
     <div class="col">
-      <%= f.text_field :capacity, class: 'form-control bg-white',placeholder: 'Number of people'%>
+      <%= f.text_field :passengers, class: 'form-control bg-white',placeholder: 'Number of people'%>
     </div>
   </div>
-
   <%= f.submit class:"btn btn-primary"%>
 <% end %>
