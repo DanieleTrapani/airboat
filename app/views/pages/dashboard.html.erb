@@ -13,7 +13,9 @@
     <p>You have no boats yet..</p>
   <% else %>
     <div class="row row-cols-1 row-cols-md-4 g-4 mb-3">
-      <%= render partial: 'shared/boat', collection: @boats %>
+      <% @boats.each do |boat| %>
+        <%= render 'my_boat', boat: boat %>
+      <% end %>
     </div>
   <% end %>
 </div>
