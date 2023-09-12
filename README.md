@@ -15,7 +15,7 @@ Airboats is a Ruby on Rails web application that helps users to book a boat to m
 
 1. Sign up or log in to your account.
 2. Explore the app and browse all the available offerings.
-3. Bbook your chosen boat after making your decision.
+3. Book your chosen boat after making your decision.
 4. Manage your booking.
 
 ## Contributing
